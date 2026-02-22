@@ -26,8 +26,6 @@ variable "template_name" {
   default     = "Template"
 }
 
-# --- TES VARIABLES SPÉCIFIQUES ---
-
 variable "pool_id" {
   description = "Numéro du Pool (Le 'XX')"
   type        = number
@@ -39,3 +37,17 @@ variable "vm_count" {
   type        = number
   default     = 3
 }
+
+variable "dns_server_ip" {
+  description = "L'adresse IP du serveur DNS BIND9 distant"
+  type        = string
+}
+
+variable "bridge_suffixes" {
+  type        = list(string)
+  description = "Suffixes pour les bridges de la carte 1 à 7"
+  default     = ["1", "2", "3", "4", "5", "6", "7"] 
+}
+
+}
+
